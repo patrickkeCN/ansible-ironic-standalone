@@ -23,7 +23,7 @@
     # IP address with default gateway
     Ironic_public_ip: "{{ ansible_default_ipv4.address }}"
     # Last IP address for PXE (2nd if the server has 2 ips)
-    Ironic_private_ip: "10.0.0.10"
+    Ironic_private_ip: "10.100.35.203"
     # APIs
     Ironic_api_token: "fake"
     Ironic_api_public_url: "http://{{ Ironic_public_ip }}:6385/"
@@ -38,10 +38,10 @@
     Ironic_conductor_download_tinyipa: true
     Ironic_conductor_download_ipa: true
     # PXE
-    Ironic_dhcp_iface: "enp0s8"
-    Ironic_dhcp_params: ["10.0.0.100", "10.0.0.200", "30m"]
+    Ironic_dhcp_iface: "eth3"
+    Ironic_dhcp_params: ["10.100.35.151", "10.100.35.200", "30m"]
     Ironic_dhcp_domain: "pxe.local"
-    Ironic_dhcp_options: ["option:dns-server,8.8.8.8"]
+    Ironic_dhcp_options: ["option:dns-server,10.100.10.3"]
     Ironic_pxe_params: ["nofb", "nomodeset", "vga=normal", "coreos.autologin", "console=tty0", "console=ttyS0,115200n8"]
     # Paths
     Ironic_http_path: "/var/lib/ironic/http"
