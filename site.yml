@@ -9,8 +9,8 @@
   # Normally these vars are defined in the inventory file or in group_vars
   vars:
     Ironic_database_root_password: "root"
-    Ironic_database_host: "127.0.0.1"
-    Ironic_messaging_host: "127.0.0.1"
+    Ironic_database_host: "10.100.35.203"
+    Ironic_messaging_host: "10.100.35.203"
     Ironic_messaging_user: "ironic"
     Ironic_messaging_pass: "rabbitmq"
     Ironic_messaging_vhost: "ironic"
@@ -23,7 +23,7 @@
     # IP address with default gateway
     Ironic_public_ip: "{{ ansible_default_ipv4.address }}"
     # Last IP address for PXE (2nd if the server has 2 ips)
-    Ironic_private_ip: "10.0.0.10"
+    Ironic_private_ip: "10.100.35.203"
     # APIs
     Ironic_api_token: "fake"
     Ironic_api_public_url: "http://{{ Ironic_public_ip }}:6385/"
@@ -38,10 +38,10 @@
     Ironic_conductor_download_tinyipa: true
     Ironic_conductor_download_ipa: true
     # PXE
-    Ironic_dhcp_iface: "enp0s8"
-    Ironic_dhcp_params: ["10.0.0.100", "10.0.0.200", "30m"]
+    Ironic_dhcp_iface: "eth3"
+    Ironic_dhcp_params: ["10.100.35.2", "10.100.35.50", "30m"]
     Ironic_dhcp_domain: "pxe.local"
-    Ironic_dhcp_options: ["option:dns-server,8.8.8.8"]
+    Ironic_dhcp_options: ["option:dns-server,10.100.10.3"]
     Ironic_pxe_params: ["nofb", "nomodeset", "vga=normal", "coreos.autologin", "console=tty0", "console=ttyS0,115200n8"]
     # Paths
     Ironic_http_path: "/var/lib/ironic/http"
@@ -167,7 +167,7 @@
                 - "X-Real-IP $remote_addr"
                 - "X-Forwarded-For $proxy_add_x_forwarded_for"
                 - "Host $http_host"
-              proxy_pass: "http://10.0.0.10:6385"
+              proxy_pass: "http://10.100.35.203:6385"
             - name: "/"
               autoindex: "on"
             - name: "/images/"

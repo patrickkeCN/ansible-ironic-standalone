@@ -23,10 +23,10 @@ ironic_inspector_discovery_enroll_ipmi:
     actions:
       - action: "set-attribute"
         path: "/driver_info/ipmi_username"
-        value: "USERID"
+        value: "root"
       - action: "set-attribute"
         path: "/driver_info/ipmi_password"
-        value: "PASSW0RD"
+        value: "xdl_idc@123."
 
   - description: "Set IPMI address if empty"
     conditions:
