@@ -21,12 +21,12 @@ ironic_config_file: /etc/ironic/ironic.conf
 ironic_config_dir: /etc/ironic/
 ironic_var_dir: /var/lib/ironic/
 
-ironic_pxe_ipa_img_url: "http://download.tcwyun.com/files/coreos_production_pxe_image-oem-stable-{{ ironic_release }}.cpio.gz"
-ironic_pxe_ipa_img_checksum: "sha1:32fe44bde03b4353aac74a74cf7bdfad13c9c97c"
-ironic_pxe_ipa_img_name: "coreos_production_pxe_image-oem.cpio.gz"
-ironic_pxe_ipa_kernel_url: "http://download.tcwyun.com/files/coreos_production_pxe-stable-{{ ironic_release }}.vmlinuz"
-ironic_pxe_ipa_kernel_checksum: "sha1:934b1fd795557fd7b8b684507cfef008eeb664d9"
-ironic_pxe_ipa_kernel_name: "coreos_production_pxe.vmlinuz"
+ironic_pxe_ipa_img_url: "http://download.tcwyun.com/files/image.initramfs"
+ironic_pxe_ipa_img_checksum: "sha1:e7b0296e208bf75bb3838f8f87b6aad39dfa2c25"
+ironic_pxe_ipa_img_name: "image.initramfs"
+ironic_pxe_ipa_kernel_url: "http://download.tcwyun.com/files/image.vmlinuz"
+ironic_pxe_ipa_kernel_checksum: "sha1:d489db332b81fdeddf35feb5b83d1afda5f5936c"
+ironic_pxe_ipa_kernel_name: "image.vmlinuz"
 
 ironic_pxe_tinyipa_img_url: "http://download.tcwyun.com/files/tinyipa-stable-{{ ironic_release }}.gz"
 ironic_pxe_tinyipa_img_checksum: "sha1:cb7b5e7b8bd390063baf65c327f5bc7636f872b1"
